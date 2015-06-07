@@ -88,9 +88,14 @@ class ChatServer:
                 elif message.type == 'Chat':
                     conn.send("{} : {}".format(message.nickname, message.content))
             self.messages.task_done()
+    #
+    # def _test_db(self):
 
 
 if __name__ == "__main__":
-    server = ChatServer('Room 1')
-    server.create_socket()
-    server.start(10)
+    # server = ChatServer('Room 1')
+    # server.create_socket()
+    # server.start(10)
+    from db.session import Session
+    session = Session()
+    session.execute('SELECT * FROM USER')

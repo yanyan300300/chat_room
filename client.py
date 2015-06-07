@@ -1,6 +1,5 @@
 import socket
 import sys
-import threading
 import select
 from server import HOST
 from server import PORT
